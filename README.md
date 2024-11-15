@@ -21,5 +21,5 @@ Welcome to the **Arch Linux Optimization** repository! This project contains all
 Start by cloning this repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/arch-linux-optimization.git
+https://github.com/EluysiumAyo/Performance-optimization-.git
 cd arch-linux-optimization
