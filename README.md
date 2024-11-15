@@ -25,7 +25,7 @@ git clone https://github.com/EluysiumAyo/Performance-optimization-.git
 cd arch-linux-optimization
 
 ```
-### 1. **IF u want all the prove scripts to run then use**
+### 1. **IF u want all the above scripts to run then use**
 
 ```bash
 git clone https://github.com/EluysiumAyo/Performance-optimization-.git
