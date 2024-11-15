@@ -21,14 +21,14 @@ Welcome to the **Arch Linux Optimization** repository! This project contains all
 Start by cloning this repository to your local machine:
 
 ```bash
-https://github.com/EluysiumAyo/Performance-optimization-.git
+git clone https://github.com/EluysiumAyo/Performance-optimization-.git
 cd arch-linux-optimization
 
 ```
 ### 1. **IF u want all the prove scripts to run then use**
 
 ```bash
-https://github.com/EluysiumAyo/Performance-optimization-.git
+git clone https://github.com/EluysiumAyo/Performance-optimization-.git
 cd arch-linux-optimization
 chmod +x master.sh
 sudo master.sh
