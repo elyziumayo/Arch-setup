@@ -24,6 +24,7 @@ Start by cloning this repository to your local machine:
 https://github.com/EluysiumAyo/Performance-optimization-.git
 cd arch-linux-optimization
 
+```
 ```bash
 ### 1. **IF u want all the prove scripts to run then use**
 
