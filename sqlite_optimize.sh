@@ -15,10 +15,11 @@ echo "Creating the vacuum_reindex.sh script..."
 
 cat << 'EOF' > $SCRIPT_PATH
 #!/bin/bash
+set -e  # Exit on any error
 
-# Find all .db and .sqlite files in home directories and run VACUUM and REINDEX on them
-find /home/* -type f -regextype posix-egrep -regex '.*\.(db|sqlite)' \
-  -exec bash -c '[ "$(file -b --mime-type {})" = "application/vnd.sqlite3" ] && sqlite3 {} "VACUUM; REINDEX;"' \; 2>/dev/null
+find ~/ -type f -regextype posix-egrep -regex '.*\.(db|sqlite)' \
+  -exec bash -c '[ "$(file -b --mime-type {})" = "application/vnd.sqlite3" ] && sqlite3 {} "VACUUM; REINDEX;"' \;
+
 EOF
 
 # Make the script executable
@@ -29,16 +30,19 @@ echo "Creating the vacuum_reindex.service systemd service..."
 
 cat << 'EOF' > $SERVICE_PATH
 [Unit]
-Description=SQLite Vacuum and Reindex for all users
+Description=Vacuum and Reindex SQLite Databases
 After=network.target
 
 [Service]
+Type=oneshot       # This makes it a one-time task
 ExecStart=/usr/local/bin/vacuum_reindex.sh
-Type=oneshot
-RemainAfterExit=true
+User=root
+Group=root
+RemainAfterExit=true  # Keeps the service status as 'active' after it finishes
 
 [Install]
 WantedBy=multi-user.target
+
 EOF
 
 # Step 3: Enable the systemd service
