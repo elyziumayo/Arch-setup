@@ -32,3 +32,5 @@ git clone https://github.com/EluysiumAyo/Performance-optimization-.git
 cd arch-linux-optimization
 chmod +x master.sh
 sudo master.sh
+```
+### keeep in mind im im still working on master to add some more functionality and  i has test the script once so .....
