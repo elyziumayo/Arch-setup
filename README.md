@@ -22,5 +22,5 @@ cd arch-linux-optimization
 chmod +x master.sh
 sudo master.sh
 ```
-### keeep in mind im still working on master.sh to add some more functionality and  i have tested the script once so .......
+### keep in mind im still working on master.sh to add some more functionality and  i have tested the script once so .......
 ### you know the drill 
