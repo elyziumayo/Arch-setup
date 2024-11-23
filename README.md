@@ -1,4 +1,4 @@
-# 🚀 **Arch Linux Optimization** ⚙️
+# 🚀 **Setting Up My Arch** ⚙️
 This repo contains some script that i use whenever is set up my arch linux system.
 I want to fully optimize my arch sytem for performance 
 As a result i use sutom repo for srch such as those providied by alhp and cachyos 
