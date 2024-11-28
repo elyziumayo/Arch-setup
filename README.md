@@ -8,13 +8,13 @@ This repository contains scripts that I use whenever I set up my Arch Linux syst
 
 ## Start by cloning this repository to your local machine:
 
-     git clone https://github.com/your-username/Performance-optimization.git
+     git clone https://github.com/elysiumayo/Arch-setup.git
      cd arch-linux-optimization
 
 ## 2. Run the Scripts (Optional)
 If you want to run all the scripts provided in this repository, use the following commands:
 
-    git clone https://github.com/your-username/Performance-optimization.git
+    git clone https://github.com/elysiumayo/Arch-setup.git
     cd arch-linux-optimization
     chmod +x master.sh
     sudo ./master.sh
