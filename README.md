@@ -7,22 +7,23 @@ This repository contains scripts that I use whenever I set up my Arch Linux syst
 
 ## 1. Start by cloning this repository to your local machine:
 
-     git clone https://github.com/elysiumayo/Arch-setup.git
-     cd arch-linux-optimization
-
+```bash
+git clone https://github.com/elysiumayo/Arch-setup.git
+cd arch-linux-optimization
+```
 ## 2. Run the Scripts (Optional)
 If you want to run all the scripts provided in this repository, use the following commands:
 
-    git clone https://github.com/elysiumayo/Arch-setup.git
-    cd arch-linux-optimization
-    chmod +x master.sh
-    sudo ./master.sh
-
+```bash git clone https://github.com/elysiumayo/Arch-setup.git
+cd arch-linux-optimization
+chmod +x master.sh
+sudo ./master.sh
+```
 ## 3. Important Notes
 
-    Keep in mind that I'm still working on master.sh to add more functionality.
-    I haven't fully tested the script yet, so proceed with caution.
-    You know the drill: use at your own risk! 😄
+Keep in mind that I'm still working on master.sh to add more functionality.
+I haven't fully tested the script yet, so proceed with caution.
+You know the drill: use at your own risk! 😄
 
 ## INSPIRATION
 1.Cachyos
