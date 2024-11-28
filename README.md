@@ -27,5 +27,6 @@ You know the drill: use at your own risk! 😄
 
 ## INSPIRATION
 1.Cachyos
+
 2.[This repo ](https://github.com/ventureoo/ARU.git)
 
