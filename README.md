@@ -3,7 +3,7 @@
 This repository contains scripts that I use whenever I set up my Arch Linux system. My goal is to fully optimize the system for performance. To achieve this, I use custom repositories and packages, including those provided by ALHP and Cachyos.
 
 
-🚀 Getting Started 🚀
+## 🚀 Getting Started 🚀
 1. Clone the Repository
 
 ## Start by cloning this repository to your local machine:
