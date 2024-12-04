@@ -12,28 +12,52 @@ echo "Starting setup for ALSA, PipeWire, and real-time privileges..."
 # Step 1: Install realtime-privileges and ALSA packages
 echo "Installing realtime-privileges and ALSA packages..."
 pacman -S --noconfirm realtime-privileges alsa-lib alsa-utils alsa-firmware alsa-card-profiles alsa-plugins
+if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to install ALSA or realtime-privileges. Exiting."
+    exit 1
+fi
 
 # Step 2: Add the current user to the 'realtime' group
 echo "Adding user $USER to the 'realtime' group..."
-gpasswd -a "$USER" realtime
+usermod -aG realtime "$USER"
+if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to add $USER to the 'realtime' group. Exiting."
+    exit 1
+fi
 
 # Step 3: Install PipeWire and related packages
 echo "Installing PipeWire and related packages..."
 pacman -S --noconfirm pipewire pipewire-pulse pipewire-jack lib32-pipewire gst-plugin-pipewire wireplumber
+if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to install PipeWire packages. Exiting."
+    exit 1
+fi
 
 # Step 4: Create directories for PipeWire Pulse and client-rt configuration
 echo "Creating PipeWire Pulse and client-rt configuration directories..."
 mkdir -p ~/.config/pipewire/pipewire-pulse.conf.d
 mkdir -p ~/.config/pipewire/client-rt.conf.d
+if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to create directories for PipeWire configuration. Exiting."
+    exit 1
+fi
 
 # Step 5: Copy 20-upmix.conf to PipeWire configuration directories
 echo "Copying 20-upmix.conf to PipeWire configuration directories..."
 cp /usr/share/pipewire/client-rt.conf.avail/20-upmix.conf ~/.config/pipewire/pipewire-pulse.conf.d/
 cp /usr/share/pipewire/client-rt.conf.avail/20-upmix.conf ~/.config/pipewire/client-rt.conf.d/
+if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to copy configuration files. Exiting."
+    exit 1
+fi
 
 # Step 6: Create PipeWire sound configuration file (10-sound.conf)
 echo "Creating PipeWire sound configuration file..."
 mkdir -p ~/.config/pipewire/pipewire.conf.d
+if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to create configuration directory for PipeWire. Exiting."
+    exit 1
+fi
 
 cat <<EOL > ~/.config/pipewire/pipewire.conf.d/10-sound.conf
 # PipeWire configuration for sound with real-time properties
