@@ -10,7 +10,7 @@ print_banner() {
     echo -e "\033[1;34m"
     echo "========================================"
     echo -e "\033[1;32m     Welcome to $SCRIPT_NAME  "
-    echo -e "\033[1;33m     Automated Script Runner"
+    echo -e "\033[1;33m     Script to setup arch/artix"
     echo -e "\033[1;34m========================================"
     echo -e "\033[0m"
 }
