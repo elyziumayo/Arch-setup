@@ -1,26 +1,19 @@
 #!/bin/bash
 
-# Ensure the script is being run as root
-if [[ $EUID -ne 0 ]]; then
-    echo "This script must be run as root!"
+# Ensure the script is being run with superuser privileges
+if [[ $(id -u) -ne 0 ]]; then
+    echo "Please run this script as root using 'sudo'."
     exit 1
 fi
 
-echo -e "\033[1mStarting setup...\033[0m"
-
-# Function to check if a package is installed
-is_package_installed() {
-    pacman -Q "$1" &>/dev/null
-    return $?
-}
+# Define the script file path and service file path
+SCRIPT_PATH="/usr/local/bin/vacuum_reindex.sh"
+SERVICE_PATH="/etc/systemd/system/vacuum_reindex.service"
 
 # Function to check if CachyOS repository is installed
 is_cachyos_repo_installed() {
-    if [[ -f /etc/pacman.d/cachyos.repo ]]; then
-        return 0  # CachyOS repo is already installed
-    else
-        return 1  # CachyOS repo is not installed
-    fi
+    # Check if the CachyOS repository is present in pacman configuration
+    grep -q "CachyOS" /etc/pacman.conf
 }
 
 # Function to ask the user for input when replacing files or directories
@@ -35,18 +28,7 @@ ask_user() {
     esac
 }
 
-# Function to ask if the user wants to install a package
-ask_install_package() {
-    local package="$1"
-    read -p "Do you want to install $package? (y/n): " choice
-    case "$choice" in
-        [Yy]*) return 0 ;;  # User chose 'yes'
-        [Nn]*) return 1 ;;  # User chose 'no'
-        *) echo "Invalid option. Defaulting to no."; return 1 ;;  # Default to no
-    esac
-}
-
-# ASCII Art for Section Headers
+# Function to display ASCII Art for Section Headers
 show_ascii_art() {
     local header="$1"
     echo -e "\033[1m"
@@ -105,7 +87,7 @@ else
     echo -e "\033[1mChaotic AUR keyring and mirrorlist are already installed.\033[0m"
 fi
 
-# Step 3: Install PipeWire, ALSA, and Real-Time Privileges
+# Step 3: Setup PipeWire, ALSA, and Real-Time Privileges
 show_ascii_art "PipeWire, ALSA, and Real-Time Privileges Setup"
 
 echo -e "\033[1mInstalling PipeWire, ALSA, and related packages...\033[0m"
@@ -201,11 +183,50 @@ else
     echo -e "\033[1mPipeWire sound configuration file already exists.\033[0m"
 fi
 
-# Step 5: Restart PipeWire services
-show_ascii_art "Restarting PipeWire Services"
+# Step 5: Vacuum and Reindex SQLite Databases (Optional)
+show_ascii_art "Vacuum and Reindex SQLite Databases"
 
-echo -e "\033[1mEnabling and starting PipeWire services...\033[0m"
-systemctl --user enable --now pipewire pipewire.socket pipewire-pulse wireplumber
+ask_user "Do you want to set up the vacuum and reindex SQLite databases service?"
+if [[ $? -eq 0 ]]; then
+    echo -e "\033[1mSetting up vacuum and reindex SQLite databases...\033[0m"
+    # Create the vacuum_reindex.sh script and service
+    cat << 'EOF' > $SCRIPT_PATH
+#!/bin/bash
+set -e  # Exit on any error
 
-echo -e "\033[1mALSA, PipeWire, and CachyOS repository setup completed successfully! 🎉\033[0m"
+find ~/ -type f -regextype posix-egrep -regex '.*\.(db|sqlite)' \
+  -exec bash -c '[ "$(file -b --mime-type {})" = "application/vnd.sqlite3" ] && sqlite3 {} "VACUUM; REINDEX;"' \;
+EOF
+    chmod +x $SCRIPT_PATH
+
+    # Create the systemd service
+    cat << 'EOF' > $SERVICE_PATH
+[Unit]
+Description=Vacuum and Reindex SQLite Databases
+After=network.target
+
+[Service]
+Type=oneshot       # This makes it a one-time task
+ExecStart=/usr/local/bin/vacuum_reindex.sh
+User=root
+Group=root
+RemainAfterExit=true  # Keeps the service status as 'active' after it finishes
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+    # Enable and start the service
+    systemctl enable vacuum_reindex.service
+    systemctl start vacuum_reindex.service
+
+    # Check the service status
+    systemctl status vacuum_reindex.service
+    echo -e "\033[1mVacuum and Reindex setup complete!\033[0m"
+else
+    echo -e "\033[1mSkipping vacuum_reindex script and service setup.\033[0m"
+fi
+
+# Final Message
+echo -e "\033[1mSetup complete! All requested configurations are in place.\033[0m"
 
