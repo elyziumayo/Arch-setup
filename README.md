@@ -18,7 +18,7 @@ If you want to run all the scripts provided in this repository, use the followin
 git clone https://github.com/elysiumayo/Arch-setup.git
 cd arch-linux-optimization
 chmod +x master.sh
-sudo ./master.sh
+./master.sh
 ```
 ## 3. Important Notes
 
