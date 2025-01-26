@@ -11,10 +11,10 @@ This repository contains scripts that I use whenever I set up my Arch Linux syst
 git clone https://github.com/elysiumayo/Arch-setup.git
 cd arch-linux-optimization
 ```
-## 2. Run the Scripts (Optional)
+## 2. Run the Scripts
 If you want to run all the scripts provided in this repository, use the following commands:
 
-```bash git clone https://github.com/elysiumayo/Arch-setup.git
+```bash
 git clone https://github.com/elysiumayo/Arch-setup.git
 cd arch-linux-optimization
 chmod +x master.sh
