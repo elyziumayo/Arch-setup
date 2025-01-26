@@ -5,8 +5,6 @@ This repository contains scripts that I use whenever I set up my Arch Linux syst
 
 ## 🚀 Getting Started 
 
-## Needed codes 
-
 ```bash
 git clone https://github.com/elysiumayo/Arch-setup.git
 cd arch-linux-optimization
