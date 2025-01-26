@@ -20,13 +20,13 @@ cd arch-linux-optimization
 chmod +x master.sh
 ./master.sh
 ```
-## 3. Important Notes
+## 📝  Important Notes
 
 Keep in mind that I'm still working on master.sh to add more functionality.
 I haven't fully tested the script yet, so proceed with caution.
 You know the drill: use at your own risk! 😄
 
-## References and Resources
+## 📚 References and Resources
 1.[Cachyos](https://github.com/cachyos)
 
 2.[ARU](https://github.com/ventureoo/ARU.git)
