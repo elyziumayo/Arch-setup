@@ -13,13 +13,20 @@ chmod +x master.sh
 ```
 ## 📝  Important Notes
 
-Keep in mind that I'm still working on master.sh to add more functionality.
+Keep in mind that I'm still working on scripts to add more functionality.
 I haven't fully tested the script yet, so proceed with caution.
 You know the drill: use at your own risk! 😄
 
+## 📝  Important Notes
+
+Keep in mind that I'm still working on scripts to add more functionality.
+I haven't fully tested the script yet, so proceed with caution.
+You know the drill: use at your own risk! 😄
+
+## ☢️  Warning
+⚠️ One should not install both alhp and cachyos repo as these together can cause package corruption and installation issues. 
+
 ## 📚 References and Resources
-1.[Cachyos](https://github.com/cachyos)
-
-2.[ARU](https://github.com/ventureoo/ARU.git)
-
-3.[Arch wiki](https://wiki.archlinux.org/title/Improving_performance)
+1. [Cachyos](https://github.com/cachyos)
+2. [ARU](https://github.com/ventureoo/ARU.git)
+3. [Arch wiki](https://wiki.archlinux.org/title/Improving_performance)
