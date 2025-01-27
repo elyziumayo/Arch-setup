@@ -17,12 +17,6 @@ Keep in mind that I'm still working on scripts to add more functionality.
 I haven't fully tested the script yet, so proceed with caution.
 You know the drill: use at your own risk! 😄
 
-## 📝  Important Notes
-
-Keep in mind that I'm still working on scripts to add more functionality.
-I haven't fully tested the script yet, so proceed with caution.
-You know the drill: use at your own risk! 😄
-
 ## ☢️  Warning
 ⚠️ One should not install both alhp and cachyos repo as these together can cause package corruption and installation issues. 
 
