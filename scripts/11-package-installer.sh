@@ -16,6 +16,13 @@ DEVELOPMENT_PKGS=(
 SYSTEM_PKGS=(
     "fastfetch"     # System information
     "kitty"         # Terminal emulator
+    "waybar"
+    "swaync"
+    "rofi-wayland"
+    "otf-font-awesome"
+    "ttf-jetbrains-mono-nerd"
+    "hyprshot"
+    
 )
 
 FILE_MANAGER_PKGS=(
