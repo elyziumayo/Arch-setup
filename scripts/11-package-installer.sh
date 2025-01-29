@@ -21,6 +21,7 @@ SYSTEM_PKGS=(
     "rofi-wayland"
     "otf-font-awesome"
     "ttf-jetbrains-mono-nerd"
+    "brightnessctl"
     
 )
 
