@@ -26,6 +26,7 @@ SYSTEM_PKGS=(
     "zsh"
     "fzf"
     "zoxide"
+    "eza"
     
 )
 
