@@ -22,7 +22,7 @@ SYSTEM_PKGS=(
     "otf-font-awesome"
     "ttf-jetbrains-mono-nerd"
     "brightnessctl"
-    "oh-my-posh"
+    "xarchiver"
     "zsh"
     "fzf"
     "zoxide"
