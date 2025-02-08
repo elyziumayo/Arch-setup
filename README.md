@@ -1,26 +1,28 @@
-## ⚙ Setting Up My Arch
+# 🪦 Arch-Setup Script (2024-2025)
 
-This repository contains scripts that I use whenever I set up my Arch Linux system. My goal is to fully optimize the system for performance. To achieve this, I use custom repositories and packages, including those provided by ALHP and Cachyos.
+> "It's not dead, it's just gone to /dev/null"
 
-
-## 🚀 Getting Started 
-
-```bash
-git clone https://github.com/elysiumayo/Arch-setup.git
-cd arch-linux-optimization
-chmod +x master.sh
-./master.sh
+```ascii
+   ____
+  /    \
+ /  X X \
+|  R.I.P |
+| ARCH   |
+|_SETUP__|
 ```
-## 📝  Important Notes
 
-Keep in mind that I'm still working on scripts to add more functionality.
-I haven't fully tested the script yet, so proceed with caution.
-You know the drill: use at your own risk! 😄
+## Cause of Death
+Terminal illness. Replaced by a better script that doesn't require sacrificing your system to the Arch gods.
 
-## ☢️  Warning
-⚠️ One should not install both alhp and cachyos repo as these together can cause package corruption and installation issues. 
+## Last Words
+"sudo rm -rf /* ... just kidding!"
 
-## 📚 References and Resources
-1. [Cachyos](https://github.com/cachyos)
-2. [ARU](https://github.com/ventureoo/ARU.git)
-3. [Arch wiki](https://wiki.archlinux.org/title/Improving_performance)
+## Survived By
+- Its successor (coming soon)
+- One working backup
+- Several traumatized test VMs
+
+## Reincarnation
+🚀 Check out the successor: [New-Arch-Setup(Aetheros)](https://github.com/elysiumayo/Aetheros.git)
+
+*In memory of all the systems that died during testing. Your sacrifice taught us what NOT to do.*
