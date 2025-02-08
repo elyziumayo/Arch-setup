@@ -18,7 +18,7 @@ Terminal illness. Replaced by a better script that doesn't require sacrificing y
 "sudo rm -rf /* ... just kidding!"
 
 ## Survived By
-- Its successor (coming soon)
+- Its successor
 - One working backup
 - Several traumatized test VMs
 
