@@ -23,6 +23,6 @@ Terminal illness. Replaced by a better script that doesn't require sacrificing y
 - Several traumatized test VMs
 
 ## Reincarnation
-🚀 Check out the successor: [New-Arch-Setup(Aetheros)](https://github.com/elysiumayo/Aetheros.git)
+🚀 Check out the successor: [New-Arch-Setup(Aetheros)](https://github.com/elyziumayo/Aetheros.git)
 
 *In memory of all the systems that died during testing. Your sacrifice taught us what NOT to do.*
